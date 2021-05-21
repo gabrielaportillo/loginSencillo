@@ -70,7 +70,7 @@ class _IngresoSistemaState extends State<IngresoSistema> {
             },
           ),
         ], //fin de accion widgets[]
-        title: Text('registro Benitez'),
+        title: Text('Login Portillo'),
       ), //fin de appbar
       body: SafeArea(
         child: ListView(padding: EdgeInsets.symmetric(horizontal: 24.0), children: <Widget>[
