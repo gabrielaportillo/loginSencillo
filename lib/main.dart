@@ -11,7 +11,7 @@ class MiLoginApp extends StatelessWidget {
       title: 'Login Benitez',
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.amber[200],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData(
