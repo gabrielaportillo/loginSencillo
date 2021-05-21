@@ -132,7 +132,7 @@ class _IngresoSistemaState extends State<IngresoSistema> {
             Center(
               child: Column(
                 children: <Widget>[
-                  Text('Lograste entrar BIENVENIDO'),
+                  Text('Hey, entraste, ¡Bienvenido!'),
                   RaisedButton(
                     elevation: 20.0,
                     child: Text('Salir'),
