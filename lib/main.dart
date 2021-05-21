@@ -77,7 +77,7 @@ class _IngresoSistemaState extends State<IngresoSistema> {
           SizedBox(height: 80.0),
           Column(
             children: <Widget>[
-              Image.asset('assets/deporte.jpg'),
+              Image.asset('assets/yo.jpg'),
               SizedBox(height: 20.0),
             ],
           ), //fin de column
