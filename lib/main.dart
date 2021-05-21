@@ -8,32 +8,31 @@ class MiLoginApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Login Benitez',
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: IngresoSistema(),
-    );
-  }
-}
+    ); //fin de material app
+  } //fin de widget
+} //fin class miloginapp
 
 class IngresoSistema extends StatefulWidget {
   @override
-   _IngresoSistemaState createState() =>  _IngresoSistemaState();
-}//fin de clase IngresoSistema
-
+  _IngresoSistemaState createState() => _IngresoSistemaState();
+}
 
 class _IngresoSistemaState extends State<IngresoSistema> {
-bool acceso = false;
+  bool acceso = false;
 
-@override
+  @override
   void initState() {
     super.initState();
   }
@@ -41,7 +40,7 @@ bool acceso = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      appBar: AppBar(
         leading: IconButton(
           icon: Icon(
             Icons.menu,
@@ -50,7 +49,7 @@ bool acceso = false;
           onPressed: () {
             print('Menu button');
           },
-        ),
+        ), //icon button
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -70,24 +69,87 @@ bool acceso = false;
               print('Filter button');
             },
           ),
-        ],
-        title:Text('Ingreso al sistema'),
-      ),//fin de appBar
-      body:SafeArea(
-        child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          children: <Widget>[
-            SizedBox(height: 80.0),
-            Column(
-              children: <Widget>[
-                Image.asset('assets/deporte.jpg'),
-                SizedBox(height: 16.0),
-              ],
-            ),
-          ],
+        ], //fin de accion widgets[]
+        title: Text('registro Benitez'),
+      ), //fin de appbar
+      body: SafeArea(
+        child: ListView(padding: EdgeInsets.symmetric(horizontal: 24.0), children: <Widget>[
+          SizedBox(height: 80.0),
+          Column(
+            children: <Widget>[
+              Image.asset('assets/deporte.jpg'),
+              SizedBox(height: 20.0),
+            ],
+          ), //fin de column
+          if (!acceso)
+            Column(children: <Widget>[
+              TextField(
+                decoration: InputDecoration(
+                  filled: true,
+                  // fillColor: Colors.amber,
+                  labelText: 'Nombre de usuario',
+                ),
+              ), //fin de textfield1
+              SizedBox(height: 12.0),
+              TextField(
+                decoration: InputDecoration(
+                  filled: true,
+                  labelText: 'Contraseña',
+                ),
+                obscureText: true,
+              ), //fin de text field 2
 
-        ),
-        ),//area segura
-    );//fin de scaffold
-  }//fin de widget
-}// fin de clase _IngresoSistemaState
+              Padding(
+                padding: const EdgeInsets.only(top: 18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    FlatButton(
+                      child: Text('CANCELAR'),
+                      onPressed: () {
+                        setState(() {
+                          acceso = false;
+                        });
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text(
+                        'SIGUIENTE',
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          acceso = true;
+                        });
+                      },
+                    ),
+                  ],
+                ), //fin de row
+              ) //fin de padding
+            ] //fin de widget
+                ) //fin de columna
+          //fin de if verdadero
+          else
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Text('Lograste entrar BIENVENIDO'),
+                  RaisedButton(
+                    elevation: 20.0,
+                    child: Text('Salir'),
+                    onPressed: () {
+                      setState(() {
+                        acceso = false;
+                      });
+                    },
+                  )
+                ], //fin de widget
+              ),
+            ) //fin de center
+//fin de else falso
+        ] //fin de widget
+
+            ), //fin de listview
+      ), //fin de safearea
+    ); //fin de scaffold
+  } //fin de widget
+} //fin clase _ingresosistemastate
