@@ -8,7 +8,7 @@ class MiLoginApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Login Benitez',
+      title: 'Ingreso Portillo',
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.amber,
@@ -145,10 +145,8 @@ class _IngresoSistemaState extends State<IngresoSistema> {
                 ], //fin de widget
               ),
             ) //fin de center
-//fin de else falso
         ] //fin de widget
-
-            ), //fin de listview
+       ), //fin de listview
       ), //fin de safearea
     ); //fin de scaffold
   } //fin de widget
